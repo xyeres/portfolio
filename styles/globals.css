@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body {}
 
 @layer components {
   .card {
@@ -13,6 +13,19 @@
     @apply flex flex-col ml-2 items-center justify-center mx-auto hover:rounded-3xl rounded-2xl transition-all duration-300 ease-linear cursor-pointer relative;
   }
 
+  .input-control {
+    @apply relative;
+  }
+
+  .input-control input, textarea {
+    @apply w-full h-10 bg-[#F5F5F5] rounded-lg text-xs p-2 pt-5;
+  }
+  
+  .input-control label {
+    @apply absolute text-xs text-[#CBCBCB] top-1 left-2;
+  }
+
+  
   .tooltip {
     @apply absolute w-auto p-1 px-2 m-1 min-w-max top-[22px] rounded-md shadow-md text-white bg-black text-xs transition-all duration-200 scale-0 origin-top;
   }
@@ -25,7 +38,6 @@
     bottom: -5px;
     height: 4px;
     animation: leftToRight 700ms 1;
-
     @apply bg-gradient-to-r from-purple-primary to-blue-400 text-white;
   }
 

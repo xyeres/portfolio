@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="pt-12 px-7 py-6 bg-white bg-no-repeat bg-cover text-black flex flex-col items-center">
+      <header className="pt-12 px-7 bg-gradient-to-b from-[#fffcdf] bg-white bg-no-repeat bg-cover text-black flex flex-col items-center">
         <div className="rounded-xl border-solid border-b-8 border-b-slate-600">
           <Image
             alt="Michael Carr"
@@ -23,12 +23,12 @@ export default function Home() {
         <h1 className="text-black text-2xl font-black mt-4">Michael Carr</h1>
         <h2 className="text-gray-600 text-lg">Front End Developer</h2>
         <p className="text-center my-3 text-sm">
-          Empathic creative wielding the web <span className="relative color-line">for good</span>. A Seattle native, when not coding you&apos;ll find me cycling toward sunlight.
+          Empathic creative wielding the web <span className="relative color-line">for good</span>. A Seattle native, when not coding you&apos;ll find me cycling toward sunshine.
         </p>
         <div className="flex flex-row gap-2 mt-5">
           <div className="flex flex-col items-center group relative">
             <Link href="/resume.pdf">
-              <a className="z-10 color-line flex flex-row items-center gap-2">
+              <a className="z-10 hover:text-gray-500 color-line flex flex-row items-center gap-2">
                 <FontAwesomeIcon color="#C65454" size="lg" icon={solid("file-pdf")} />
                 Download resume
               </a>
@@ -38,7 +38,7 @@ export default function Home() {
       </header>
       <div className="m-6 mt-10">
 
-        <main className="mt-9">
+        <main className="mt-16">
           <div>
             <h2 className="font-black text-xl">Recent work</h2>
             <p>Two of my favorite recent projects with live site and source code</p>
@@ -84,7 +84,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col mt-6">
+          <div className="flex flex-col mt-16">
             <h2 className="font-black text-xl">Resume</h2>
             <p>Grab a copy of my resume, and feel free to share it</p>
             <button className="mt-3 flex justify-center items-center flex-row gap-3 hover:border-b-0 hover:mt-4 transition-all border-b-4 border-b-blue-shadow bg-blue-secondary hover:bg-blue-shadow rounded-md text-white py-3 px-8">
@@ -92,7 +92,34 @@ export default function Home() {
               Download resume
             </button>
           </div>
+          <div className="flex flex-col mt-16">
+            <h2 className="font-black text-xl">Contact</h2>
+            <p>I&apos;d love to hear what you are working on, send me something interesting!</p>
+            <form method="post" className="w-full flex flex-col" action="/">
+              <div className="input-control mt-2">
+                <label htmlFor="name">Name</label>
+                <input type="text" name="name" />
+              </div>
+              <div className="input-control mt-2">
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" />
+              </div>
+              <div className="input-control mt-2">
+                <label htmlFor="message">Message</label>
+                <textarea rows="3" name="message" />
+              </div>
+              <button className="
+                mt-2 flex justify-center items-center flex-row gap-3 hover:border-b-0 hover:mt-3 transition-all border-b-4 border-b-blue-shadow bg-blue-secondary hover:bg-blue-shadow rounded-md text-white py-3 px-8 ml-36
+              ">
+                <FontAwesomeIcon icon={solid('paper-plane')} size="sm" />
+                Send
+              </button>
+            </form>
+          </div>
         </main>
+        <footer className="mt-6 mx-10 border-t flex flex-row items-center justify-center">
+          <p className="text-xs mt-2 text-slate-400">&copy;2022 Michael Carr</p>
+        </footer>
       </div>
     </>
   )
