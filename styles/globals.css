@@ -2,14 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url('/bg-top.png');
-  background-repeat: no-repeat;
-  background-position: top right;
-}
+
 
 @layer components {
   .card {
-    @apply border-2 p-5 rounded-lg;
+    @apply border rounded hover:border-2 hover:p-[15px] transition-all duration-100 p-4;
   }
+
+  .icon {
+    @apply flex flex-col ml-2 items-center justify-center mx-auto hover:rounded-3xl rounded-2xl transition-all duration-300 ease-linear cursor-pointer relative;
+  }
+
+  .tooltip {
+    @apply absolute w-auto p-1 px-2 m-1 min-w-max top-[22px] rounded-md shadow-md text-white bg-black text-xs transition-all duration-200 scale-0 origin-top;
+  }
+
+  .color-line:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -5px;
+    height: 4px;
+    animation: leftToRight 700ms 1;
+
+    @apply bg-gradient-to-r from-purple-primary to-blue-400 text-white;
+  }
+
+  @keyframes leftToRight {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%
+    }
+  }
+
+  .hoverBg {
+    @apply absolute h-12 w-full min-w-max text-white bg-transparent text-xs transition-all duration-300 translate-y-2 origin-left;
+  }
+
 }
