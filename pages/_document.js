@@ -7,7 +7,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="/images/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
           <meta name="description" content="Michael Carr, Front End Developer, see my recent projects and find ways to connect with me." />
         </Head>
         <body>
