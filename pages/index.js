@@ -1,9 +1,10 @@
+import { ContactForm } from './../components/ContactForm';
 import { Card } from './../components/Card';
 import Image from "next/image";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { solid, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import Icon from "../components/Icon";
 
 import {useRef, useState} from 'react'
@@ -107,26 +108,7 @@ export default function Home() {
           <div className="flex flex-col mt-16">
             <h2 className="font-black text-xl">Contact</h2>
             <p className='mb-5'>I&apos;d love to hear what you are working on, send me something interesting!</p>
-            <form method="post" className="w-full flex flex-col" action="/">
-              <div className="input-control mt-2">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" />
-              </div>
-              <div className="input-control mt-2">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" />
-              </div>
-              <div className="input-control mt-2">
-                <label htmlFor="message">Message</label>
-                <textarea rows="3" name="message" />
-              </div>
-              <button className="
-                mt-3 hover:scale-95 flex justify-center items-center flex-row gap-3 active:border-b-0 active:mt-4 transition-all border-b-4 border-b-blue-shadow hover:border-b-blue-900 bg-blue-secondary hover:bg-blue-shadow rounded-md text-white py-3 px-8 w-42 ml-auto
-              ">
-                <FontAwesomeIcon icon={solid('paper-plane')} size="sm" />
-                Send
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </main>
         <footer className="mt-6 mx-10 border-t flex flex-row items-center justify-center">
