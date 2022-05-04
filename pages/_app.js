@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-      <title>Stream music from United Pursuit and friends</title>
+      <title>Michael Carr, Front End Developer</title>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@xyeres" />
       <meta name="twitter:title" content="Michael Carr, Front End Developer" />
