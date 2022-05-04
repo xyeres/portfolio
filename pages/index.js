@@ -25,8 +25,8 @@ export default function Home() {
   }
 
   return (
-    <div className='max-w-xl m-auto'>
-      <header className="pt-12 px-7 text-black flex flex-col items-center">
+    <div className='max-w-xl mr-30 m-auto bg-transparent'>
+      <header className="pt-12 px-7 text-black flex  bg-transparent flex-col items-center">
         <div onClick={handleTooManyClicks} className="relative active:scale-90 flex items-center justify-center group avatar-container">
           <Image
             alt="Michael Carr"
@@ -37,26 +37,22 @@ export default function Home() {
           />
         {tooManyClicks && <>
             <span className='sqThing'></span>
-            <p className='absolute bg-pink-200 -rotate-6 w-24 shadow flex -right-14 text-xs p-2 top-4 font-semibold flex-col gap-2 text-center items-center justify-center'>
+            <p className='absolute bg-blue-400 -rotate-6 w-24 shadow flex -right-14 text-xs p-2 top-4 font-semibold flex-col gap-2 text-center text-white items-center justify-center'>
               <FontAwesomeIcon size='2x' icon={solid("bomb")} />
               Whoa that was a lot
             </p>
           </>}
 
         </div>
-        <h1 className="text-black text-2xl font-black mt-4">Michael Carr</h1>
-        <h2 className="text-gray-600 text-lg">Front End Developer</h2>
-        <p className="text-center my-3 sm:mx-16 text-sm">
-          Empathic creative wielding the web for good. A Seattle native, when not coding you&apos;ll find me cycling toward sunshine.
+        <h1 className="text-black text-2xl 900px:text-white font-black mt-4">Michael Carr</h1>
+        <h2 className="text-gray-600 1000px:text-white text-lg">Front End Developer</h2>
+        <p className="text-center 1400px:text-white my-3 sm:mx-16">
+          Empathic developer wielding the web for good. A Seattle native, when not coding you&apos;ll find me cycling toward sunshine.
         </p>
         <div className="flex flex-row gap-2 mt-5">
-          <div className="flex flex-col items-center group relative">
-            <Link href="/resume.pdf">
-              <a className="z-10 active:scale-90 transition-all hover:text-gray-600 color-line flex flex-row items-center gap-2">
-                <FontAwesomeIcon color="#C65454" size="lg" icon={solid("file-pdf")} />
-                Download resume
-              </a>
-            </Link>
+          <div className="flex 1600px:text-white flex-row gap-2 relative">
+              <Icon href='https://github.com/xyeres' iconStyles={'hover:text-blue-primary active:scale-90'} text="View my GitHub projects" icon={<FontAwesomeIcon size='2x' icon={brands('github-square')} />} />
+              <Icon href='https://www.linkedin.com/in/mxcarr/' iconStyles={'hover:text-blue-primary active:scale-90'} text="Connect with me on LinkedIn" icon={<FontAwesomeIcon size='2x' icon={brands('linkedin')} />} />
           </div>
         </div>
       </header>
@@ -73,7 +69,7 @@ export default function Home() {
             title="Streamy" 
             desc="Subscriber exclusive listening serving thousands of users" 
             stack="Built with React / NextJs / Redux / Firebase"
-            links={{livesite: '#', github:'#'}} 
+            links={{livesite: 'https://listen.unitedpursuit.com/', github:'https://github.com/xyeres/streamy'}} 
             iconStyles="hover:text-purple-primary"
             borderColor="border-purple-primary"
           />
@@ -94,20 +90,20 @@ export default function Home() {
             title="Sound Splits" 
             desc="Royalty accounting SaaS for labels and publishers" 
             stack="Built with Tailwind / React / NextJs / Redux / Django"
-            links={{livesite: '#', github:'#'}} 
+            links={{livesite: 'http://www.soundsplits.com/', github:'https://github.com/xyeres/splits-client'}} 
             iconStyles="hover:text-blue-primary"
             borderColor="border-blue-primary"
             />
             <p className='text-center text-sm mt-6'>Visit my <Link href="https://github.com/xyeres"><a className='border-b-4 border-b-gray-300 hover:border-b-gray-500 transition-all'>GitHub profile</a></Link> for more samples.</p>
           </div>
-          <div className="flex flex-col mt-12">
+          {/* <div className="flex flex-col mt-12">
             <h2 className="font-black text-xl">Resume</h2>
-            <p className='sm:mb-6'>Grab a copy of my resume, and feel free to share it</p>
+            <p className='sm:mb-6'>Straight to the brass tacks huh? </p>
             <button className="mt-3 mx-10 flex justify-center items-center flex-row gap-3 hover:scale-95 active:border-b-0 active:mt-4 transition-all border-b-4 border-b-blue-shadow hover:border-b-blue-900 bg-blue-primary hover:bg-blue-shadow rounded-md text-white py-3 px-8">
               <FontAwesomeIcon  icon={solid('file-pdf')} size="lg" />
               Download resume
             </button>
-          </div>
+          </div> */}
           <div className="flex flex-col mt-16">
             <h2 className="font-black text-xl">Contact</h2>
             <p className='mb-5'>I&apos;d love to hear what you are working on, send me something interesting!</p>

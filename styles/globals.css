@@ -8,7 +8,14 @@
 
 }
 
-body {}
+body {
+  background-image: url(/wave.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: scroll;
+  background-size: 100%;
+
+}
 
 @layer components {
   .icon {
@@ -32,7 +39,7 @@ body {}
   }
 
   .tooltip {
-    @apply absolute w-auto p-1 px-2 m-1 min-w-max top-[22px] rounded-md shadow-md text-white bg-black text-xs transition-all duration-200 scale-0 origin-top;
+    @apply absolute w-auto p-1 px-2 m-1 min-w-max bottom-[-38px] rounded-md shadow-md text-white bg-black text-xs transition-all duration-200 scale-0 origin-top;
   }
 
   .color-line::after {
@@ -88,8 +95,8 @@ body {}
   }
 
   .avatar-container {
-    box-shadow: 5px -5px 0 -2px white, 5px -5px gray;
-    @apply border-2 border-solid border-black transition-all p-3;
+    box-shadow: 5px -5px 0 -2px white, 5px -5px black;
+    @apply bg-white border-2 border-solid border-black transition-all p-3;
   }
 
   .avatar-container:active  {
@@ -98,7 +105,7 @@ body {}
 
   .avatar {
     clip-path: circle(50%);
-    @apply transition-all duration-500;
+    @apply transition-all duration-500 pointer-events-none;
   }
 
    .avatar:hover {
@@ -108,7 +115,7 @@ body {}
   .sqThing::before {
     content:'';
     position: absolute;
-    @apply  w-6 h-6 right-[29px] top-[36px] rotate-[-51deg] bg-pink-200 z-50;
+    @apply  w-6 h-6 right-[29px] top-[36px] rotate-[-51deg] bg-blue-400 z-50;
   }
 
 }
