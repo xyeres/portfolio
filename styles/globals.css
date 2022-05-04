@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --purple-primary: #BC2FFF;
+
+}
+
 body {}
 
 @layer components {
-  .card {
-    @apply border rounded hover:border-2 hover:p-[15px] transition-all duration-100 p-4;
-  }
-
   .icon {
     @apply flex flex-col ml-2 items-center justify-center mx-auto hover:rounded-3xl rounded-2xl transition-all duration-300 ease-linear cursor-pointer relative;
   }
@@ -17,28 +19,35 @@ body {}
     @apply relative;
   }
 
-  .input-control input, textarea {
+  .input-control input {
     @apply w-full h-10 bg-[#F5F5F5] rounded-lg text-xs p-2 pt-5;
   }
-  
+
+  .input-control textarea {
+    @apply w-full bg-[#F5F5F5] rounded-lg text-xs p-2 pt-5;
+  }
+
   .input-control label {
     @apply absolute text-xs text-[#CBCBCB] top-1 left-2;
   }
 
-  
   .tooltip {
     @apply absolute w-auto p-1 px-2 m-1 min-w-max top-[22px] rounded-md shadow-md text-white bg-black text-xs transition-all duration-200 scale-0 origin-top;
   }
 
-  .color-line:hover::after {
+  .color-line::after {
     content: '';
     position: absolute;
     left: 0;
     width: 100%;
     bottom: -5px;
-    height: 4px;
+    height: 2px;
+  }
+
+  .color-line:active::after,
+  .color-line:hover::after {
     animation: leftToRight 700ms 1;
-    @apply bg-gradient-to-r from-purple-primary to-blue-400 text-white;
+    @apply bg-gradient-to-r from-purple-primary to-blue-400;
   }
 
   @keyframes leftToRight {
@@ -53,6 +62,53 @@ body {}
 
   .hoverBg {
     @apply absolute h-12 w-full min-w-max text-white bg-transparent text-xs transition-all duration-300 translate-y-2 origin-left;
+  }
+
+  .card {
+    background-color: white;
+    display: flex;
+    gap: 0.8rem;
+    align-items: 'center';
+    min-height: 90px;
+    padding: 1.5rem;
+    margin: auto 0 auto;
+    margin-top: 1.75rem;
+    box-shadow: 5px -5px 0 -2px white, 5px -5px gray;
+    transition: box-shadow 500ms, top 700ms, left 450ms;
+    position: relative;
+    top: 0;
+    left: 0;
+    @apply border-[3px] border-solid border-black;
+  }
+
+  .card:hover, .card:active {
+    top: -2px;
+    left: 2px;
+    box-shadow: 0 0 0 -3px white, 0 0 0 0 black;
+  }
+
+  .avatar-container {
+    box-shadow: 5px -5px 0 -2px white, 5px -5px gray;
+    @apply border-2 border-solid border-black transition-all p-3;
+  }
+
+  .avatar-container:active  {
+    box-shadow: 0px -0px 0 -5px white, 0px -0px;
+  }
+
+  .avatar {
+    clip-path: circle(50%);
+    @apply transition-all duration-500;
+  }
+
+   .avatar:hover {
+    clip-path: circle(100%);
+  }
+
+  .sqThing::before {
+    content:'';
+    position: absolute;
+    @apply  w-6 h-6 right-[29px] top-[36px] rotate-[-51deg] bg-pink-200 z-50;
   }
 
 }
